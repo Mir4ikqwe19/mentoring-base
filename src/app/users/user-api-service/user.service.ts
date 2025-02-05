@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from "./users-list/users-interface";
+import { User } from "../users-interface/users-interface";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
@@ -20,9 +20,15 @@ export class UsersService {
     }
 
     createUser(user: User) {
-        this.usersSubject$.next(
-            [...this.usersSubject$.value]
-        )
+        const userIsExisting = this.usersSubject$.value.find(
+            currentElement => currentElement.email === user.email);
+
+            if (userIsExisting !== undefined) {
+                alert('Такой email уже зарегистрирован');
+            } else {
+                this.usersSubject$.next([...this.usersSubject$.value, user]);
+                alert('Новый пользователь успешно добавлен');
+            }
     }
 
     deleteUser(id: number) {

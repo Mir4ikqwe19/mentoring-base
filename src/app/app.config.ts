@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { UsersListComponent } from './users-list/users-list.component';
+import { UsersListComponent } from './users-list/user-list/users-list.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [

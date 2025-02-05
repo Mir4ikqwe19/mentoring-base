@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Todo } from "./todo-card/todos-interface";
+import { Todo } from "../todos-interface/todos-interface";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
@@ -20,9 +20,15 @@ export class TodosService {
     }
 
     createTodo(todo: Todo) {
-        this.todosSubject$.next(
-            [...this.todosSubject$.value, todo]
-        )
+        const todoIsExisting = this.todosSubject$.value.find(
+            currentElement => currentElement.title === todo.title);
+
+            if (todoIsExisting !== undefined) {
+                alert('Такой пользователь уже зарегистрирован')
+            } else {
+                this.todosSubject$.next([...this.todosSubject$.value, todo]);
+                alert('Новый пользователь зарегистрирован')
+            }
     }
 
     deleteTodo(id: number) {
