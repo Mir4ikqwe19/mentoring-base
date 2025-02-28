@@ -1,4 +1,3 @@
-<h2 class="User-form-title">CREATE USER FORM:</h2>
 <div class="User-form-container">
     <form 
         class="user-form"
@@ -6,26 +5,26 @@
         (ngSubmit)="submitForm()"
         >
         <mat-form-field class="forms-size">
-            <mat-label>Name:</mat-label>
+            <mat-label>Укажите имя пользователя:</mat-label>
             <input matInput formControlName="name">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Email:</mat-label>
+            <mat-label>Укажите почту пользователя:</mat-label>
             <input matInput formControlName="email">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Website:</mat-label>
+            <mat-label>Укажите веб сайт пользователя:</mat-label>
             <input matInput formControlName="website">
         </mat-form-field>
 
         <div formGroupName="company">
             <mat-form-field class="forms-size">
-                <mat-label>Company name:</mat-label>
+                <mat-label>Укажите имя компании:</mat-label>
                 <input matInput formControlName="name">
             </mat-form-field>
         </div>
-        <button class="User-form-button" [disabled]="!form.valid" mat-button>Create user</button>
+        <button type="submit" class="User-form-button" [disabled]="!form.valid" (click)="submitForm()" mat-button>Create user</button>
     </form>
 </div>

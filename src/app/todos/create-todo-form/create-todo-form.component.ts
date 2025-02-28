@@ -2,11 +2,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Todo } from '../todos-interface/todos-interface';
 import { identifierName } from '@angular/compiler';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-create-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
   templateUrl: './create-todo-form.component.html',
   styleUrl: './create-todo-form.component.scss'
 })

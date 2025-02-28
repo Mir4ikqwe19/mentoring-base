@@ -1,5 +1,6 @@
 .todo-form-container {
     margin-left: 10px;
+    display: flex;
 }
 
 .todo-form {
@@ -9,10 +10,15 @@
 
 .todo-form-button {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: none;
-    border-radius: 15px;
     padding: 7px;
-    background-color: #F0BA4E;
+    background-color: #f5f5f5;
     cursor: pointer;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
 }

@@ -2,16 +2,25 @@
     <div class="todo-form">
         <h1>CREATE TODO FORM:</h1>
         <form 
+        class="form-container"
         [formGroup]="form"
         (ngSubmit)="submitForm()"
         >
-            <p>Текст задачи:</p>
-            <input type="text" formControlName="title">
-            <p>Автор задачи:</p>
-            <input type="text" formControlName="userId">
-            <p>Задача завершена:</p>
-            <input type="text" formControlName="completed">
-            <button class="todo-form-button" [disabled]="!form.valid">Create form</button>
+        <mat-form-field>
+            <mat-label>Текст задачи</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Автор задачи</mat-label>
+                <input matInput formControlName="userId">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Задача завершена</mat-label>
+                <input matInput formControlName="completed">
+            </mat-form-field>
+            <button class="todo-form-button" [disabled]="!form.valid" mat-button>Create form</button>
         </form>
     </div>
 </div>

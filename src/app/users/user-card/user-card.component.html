@@ -1,7 +1,12 @@
-<div class="users-carts ">
-    <p>{{user.name}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.website}}</p>
-    <p>{{user.company.name}}</p>
-    <button class="button-delete-user" (click)=onDeleteUser(user.id)>Удалить Юзера</button>
-</div>
+<mat-card appearance="outlined" class="users-carts ">
+    <mat-card-header class="mat-card-header">
+        <mat-card-title class="users-carts-name">{{user.name}}</mat-card-title>
+        <mat-card-title class="users-carts-name">{{user.email}}</mat-card-title>
+        <mat-card-title class="users-carts-name">{{user.website}}</mat-card-title>
+        <mat-card-title class="users-carts-name">{{user.company.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions class="button-container">
+        <button class="button-delete-user" mat-button (click)="openDeleteDialog()">Delete user</button>
+        <button class="button-edit-user" mat-button (click)="openDialog()">Edit user</button>
+    </mat-card-actions>
+</mat-card>

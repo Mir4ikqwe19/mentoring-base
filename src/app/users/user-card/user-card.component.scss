@@ -1,20 +1,45 @@
 .users-carts {
-    width: 230px; 
+    width: 250px; 
     height: 270px; 
     margin: 5px;
     padding: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    box-shadow: 0px 30px 50px 0px #3C3C3B12;
+    box-shadow: 10px 5px 5px #c9c9c9;
 }
 
 .button-delete-user {
     display: flex;
-    border: 1px solid #F0BA4E;
-    border-radius: 15px;
-    background-color: #F0BA4E;
-    color: black;
+    background-color: #ffff;
+    color: #673ab7;
     padding: 8px;
-    margin-top: 55px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 550;
+    width: 102px;
+}
+
+.button-edit-user {
+    display: flex;
+    background-color: #ffff;
+    color: #673ab7;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 550;
+    width: 97px;
+}
+
+.users-carts-name {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 45px;
+    gap: 15px;
+}
+
+.mat-card-header {
+    display: flex;
+    padding: 8px;
 }

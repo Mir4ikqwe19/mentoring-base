@@ -1,0 +1,25 @@
+.user-form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+}
+
+.forms-size {
+    width: 100%;
+}
+
+.edit-user-form-button {
+    display: flex;
+    color: #673ab7;
+    box-shadow:  5px 13px 5px rgba(60, 60, 59, 0.0705882353);
+}
+
+.is_editing {
+    display: flex;
+    margin-left: 25px;
+    font-size: 25px;
+    font-weight: 400;
+    align-items: center;
+}
