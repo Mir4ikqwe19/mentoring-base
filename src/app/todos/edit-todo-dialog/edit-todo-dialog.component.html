@@ -1,0 +1,33 @@
+<div class="todo-dialog-container">
+    <div class="">
+        <h2 mat-dialog-title class="is_editing">User editing: {{ data.todo.title | CustomPipe}}</h2>
+        <form 
+        class="todo-form"
+        [formGroup]="form"
+        >
+            <mat-form-field class="forms-size">
+                <mat-label>Текст задачи</mat-label>
+                <input matInput formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field class="forms-size">
+                <mat-label>Автор задачи</mat-label>
+                <input matInput formControlName="userId">
+            </mat-form-field>
+
+            <mat-form-field class="forms-size">
+                <mat-label>Задача завершена</mat-label>
+                <input matInput formControlName="completed">
+            </mat-form-field>
+            <button 
+                class="edit-todo-form-button" 
+                [disabled]="form.invalid" 
+                mat-button
+                [mat-dialog-close]="todoWithUpdatedFields"
+                type="button"
+            >
+                Create form
+            </button>
+        </form>
+    </div>
+</div>

@@ -21,12 +21,16 @@
 
 .create-user-button {
     display: flex;
-    border: 1px solid #673ab7;
+    border: 1px solid #4B565E;
     cursor: pointer;
-    background-color: #ffff;
+    background-color: #4B565E;
     align-items: center;
     gap: 5px;
     font-size: 16px;
     font-weight: 400;
     margin-left: 6px;
+}
+
+.add-user {
+    color:#F0BA4E;
 }

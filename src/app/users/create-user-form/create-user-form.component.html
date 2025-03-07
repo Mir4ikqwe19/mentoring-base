@@ -4,7 +4,7 @@
         class="user-form"
         [formGroup]="form"
         (ngSubmit)="submitForm()"
-        >
+    >
         <mat-form-field class="forms-size">
             <mat-label>Name:</mat-label>
             <input matInput formControlName="name">
@@ -26,6 +26,11 @@
                 <input matInput formControlName="name">
             </mat-form-field>
         </div>
-        <button class="User-form-button" [disabled]="!form.valid" mat-button>Create user</button>
+
+            <mat-form-field class="forms-size">
+                <mat-label>Phone number:</mat-label>
+                <input matInput formControlName="phone">
+            </mat-form-field>
+        <button class="User-form-button" [disabled]="form.invalid" mat-button>Create user</button>
     </form>
 </div>

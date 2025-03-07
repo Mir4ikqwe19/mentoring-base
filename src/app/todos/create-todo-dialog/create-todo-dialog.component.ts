@@ -1,22 +1,20 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ITodo } from '../todos-interface/todos-interface';
-import { identifierName } from '@angular/compiler';
-import { MatButtonModule } from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ITodo } from '../todos-interface/todos-interface';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-create-todo-form',
+  selector: 'app-create-todo-dialog',
   standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule,],
-  templateUrl: './create-todo-form.component.html',
-  styleUrl: './create-todo-form.component.scss'
+  imports: [MatFormFieldModule, MatLabel, ReactiveFormsModule, FormsModule,],
+  templateUrl: './create-todo-dialog.component.html',
+  styleUrl: './create-todo-dialog.component.scss'
 })
-export class CreateTodoFormComponent {
+export class CreateTodoDialogComponent {
   public snackBar = inject(MatSnackBar);
+  private dialogRef = inject(MatDialogRef<CreateTodoDialogComponent>);
 
   @Output()
   createTodo = new EventEmitter<ITodo>()
@@ -29,9 +27,7 @@ export class CreateTodoFormComponent {
   })
 
   public submitForm(): void {
-    const todo: ITodo = this.form.getRawValue();
-    this.createTodo.emit(todo);
-    this.form.reset();
+    this.dialogRef.close(this.form.value)
     this.snackBar.open('Пользователь создан', 'OK', {
       duration: 2000,
     })

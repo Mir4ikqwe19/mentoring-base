@@ -1,4 +1,4 @@
-export interface User {
+export interface IUser {
     id: number;
     name: string;
     username?: string;
@@ -13,7 +13,7 @@ export interface User {
             lng: number;
         }
     }
-    phone?: number;
+    phone?: string;
     website: string;
     company: {
         name: string;
@@ -26,7 +26,8 @@ export interface ICreateUser {
     id: number,
     name: string,
     email: string,
-    website: string
+    website: string,
+    phone: number,
     company: {
         name: string
     };

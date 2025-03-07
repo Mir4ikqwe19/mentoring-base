@@ -1,13 +1,25 @@
-<div class="todo-cards">
-    <p>Текст задачи:</p>
-    <div>
-        {{todo.title}}
-    </div>
+<mat-card class="todo-cards-container" appearance="outlined">
+    <mat-card-header class="todos-header">
+        <mat-card-title class="todos-title">Текст задачи:</mat-card-title>
+        <mat-card-title class="todos-title">
+            {{todo.title | CustomPipe}}
+        </mat-card-title>
+    
+        <mat-card-title class="todos-title">Автор задачи:</mat-card-title>
+        <mat-card-title class="todos-title">{{todo.userId}}</mat-card-title>
+    
+        <mat-card-title class="todos-title">Задача завершена:</mat-card-title>
+        <mat-card-title class="todos-title">{{todo.completed ? 'Да' : 'Нет'}}</mat-card-title>
 
-    <p>Автор задачи</p>
-    <div>{{todo.userId}}</div>
-
-    <p>Задача завершена:</p>
-    <div>{{todo.completed ? 'Да' : 'Нет'}}</div>
-    <button class="todo-button" (click)=onDeleteTodo(todo.id)>Удалить задачу</button>
-</div>
+        <div class="mat-button">
+            <button class="button-delete-todo" type="button" mat-button (click)="openDeleteDialog()">
+                Delete
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+            <button class="button-edit-todo" type="button" mat-button (click)="openDialog()">
+                Edit
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </mat-card-header>
+</mat-card>

@@ -76,6 +76,7 @@
 
 .menu {
     margin-right: 10px;
+    border: none;
 }
 
 .header-2-nav {
@@ -99,7 +100,15 @@
 }
 
 .country {
+    display: flex;
+    align-self: center;
     border: none;
     background-color: #F0BA4E;
     color: #ffffff;
+}
+
+.map {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }

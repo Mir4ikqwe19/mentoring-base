@@ -4,7 +4,7 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { UserApiService } from "../user-api-service/users-api.service";
 import { UserCardComponent } from "../user-card/user-card.component";
-import { User,} from "../users-interface/users-interface";
+import { IUser,} from "../users-interface/users-interface";
 import { UsersService } from "../user-api-service/user.service";
 import { CreateUserFormComponent } from "../create-user-form/create-user-form.component";
 import { MatButtonModule } from "@angular/material/button";
@@ -39,25 +39,23 @@ export class UsersListComponent {
 
     constructor() {
         this.usersApiService.getUsers().subscribe(
-            (response: User[]) => {
+            (response: IUser[]) => {
                 this.usersService.setUsers(response);
             }
         )
 
-        this.usersService.users$.subscribe(
-            users => console.log(users)
-        )
+        this.usersService.users$.subscribe();
     }
     
     deleteUser(id: number) {
         this.usersService.deleteUser(id)
     }
 
-    editUser(user: User) {
+    editUser(user: IUser) {
         this.usersService.editUser(user);
     }
 
-    public createUser(formData: User) {
+    public createUser(formData: IUser) {
         this.usersService.createUser(formData)
     }
 
@@ -66,7 +64,7 @@ export class UsersListComponent {
           width: '600px',
         });
     
-        dialogRef.afterClosed().subscribe((result: User) => {
+        dialogRef.afterClosed().subscribe((result: IUser) => {
           if (result) {
             this.createUser(result)
             this.snackBar.open('Пользователь создан', 'OK', {
@@ -74,5 +72,5 @@ export class UsersListComponent {
               })
           }
         });
-      }
+    }
 }

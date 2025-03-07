@@ -1,11 +1,11 @@
-import { NgFor } from '@angular/common';
+import { DatePipe, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,NgFor],
+  imports: [RouterOutlet,RouterLink,NgFor, DatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -22,6 +22,8 @@ export class HeaderComponent {
   readonly headerItem5 = 'Todos'
 
   readonly headerItemYellow1 = upperCaseMenu
+
+  readonly today = new Date();
 
   menuUpperNames = upperCaseMenu
 

@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
-import { Todo } from "../todos-interface/todos-interface";
+import { ITodo } from "../todos-interface/todos-interface";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
-    todosSubject$ = new BehaviorSubject<Todo[]>([]);
+    todosSubject$ = new BehaviorSubject<ITodo[]>([]);
     todos$ = this.todosSubject$.asObservable();
 
-    setTodos(todos: Todo[]) {
-        this.todosSubject$.next(todos.slice(0, 10));
+    setTodos(todos: ITodo[]) {
+        this.todosSubject$.next(todos.slice(0, 14));
     }
 
-    editedTodo(editedTodo: Todo) {
+    editTodo(editedTodo: ITodo) {
         this.todosSubject$.next(
             this.todosSubject$.value.map(
                 todo => todo.id === editedTodo.id ? editedTodo : todo
@@ -19,7 +19,7 @@ export class TodosService {
         )
     }
 
-    createTodo(todo: Todo) {
+    createTodo(todo: ITodo) {
         const todoIsExisting = this.todosSubject$.value.find(
             currentElement => currentElement.title === todo.title);
 

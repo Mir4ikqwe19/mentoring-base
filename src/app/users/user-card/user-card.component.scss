@@ -1,5 +1,5 @@
 .users-carts {
-    width: 250px; 
+    width: 254px; 
     height: 270px; 
     margin: 5px;
     padding: 10px;
@@ -9,7 +9,7 @@
 .button-delete-user {
     display: flex;
     background-color: #ffff;
-    color: #673ab7;
+    color: #7a0718;
     padding: 8px;
     cursor: pointer;
     font-size: 14px;
@@ -20,7 +20,7 @@
 .button-edit-user {
     display: flex;
     background-color: #ffff;
-    color: #673ab7;
+    color: #005cbb;
     padding: 8px;
     cursor: pointer;
     font-size: 14px;
@@ -29,13 +29,16 @@
 }
 
 .users-carts-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 17px;
     font-weight: 400;
 }
 
 .button-container {
     display: flex;
-    margin-top: 45px;
+    margin-top: 25px;
     gap: 15px;
 }
 

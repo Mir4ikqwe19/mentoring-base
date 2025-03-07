@@ -10,6 +10,7 @@
         <a class="header-nav-item">{{headerItem3}}</a>
         <button style="background-color: #f5f5f5; color: black; cursor: pointer;" routerLink="/users" class="header-nav-item">{{headerItem4}}</button>
         <a routerLink="/todos" style="color: #FFFF;">{{headerItem5}}</a>
+        <button (click) ="changeMenuText()">Изменить текст</button>
       </nav>
    </div>
    <div class="header-right">
@@ -28,7 +29,6 @@
           <img class="menu" src="/assets/light.svg" alt="меню">
         <nav class="header-2-nav">
           <span class="header-2-nav-item" *ngFor ="let item of menuUpperNames">{{item}}</span>
-          <button (click) ="changeMenuText()">Изменить текст</button>
         </nav>
       </div>
       <div class="header-2-right">
@@ -37,7 +37,11 @@
         </form>
         <div class="map">
           <img src="/assets/map-pin (2) 1.svg" alt="">
-          <button type="menu" class="country">Москва</button>
+          <a class="country">Москва</a>
+          <p style="color: #f5f5f5;">
+            Дата:
+            {{ today | date: 'MMM d, y, h:mm:ss a' }}
+        </p>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-.user-form {
+.todo-form {
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 480px;
+    height: 360px;
     padding: 20px;
 }
 
@@ -10,10 +10,12 @@
     width: 100%;
 }
 
-.edit-user-form-button {
+.edit-todo-form-button {
     display: flex;
     color: #673ab7;
     box-shadow:  5px 13px 5px rgba(60, 60, 59, 0.0705882353);
+    margin-top: 40px;
+    align-items: center;
 }
 
 .is_editing {

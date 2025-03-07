@@ -3,28 +3,33 @@
         class="user-form"
         [formGroup]="form"
         (ngSubmit)="submitForm()"
-        >
+    >
         <mat-form-field class="forms-size">
-            <mat-label>Укажите имя пользователя:</mat-label>
+            <mat-label>Name:</mat-label>
             <input matInput formControlName="name">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Укажите почту пользователя:</mat-label>
+            <mat-label>Email:</mat-label>
             <input matInput formControlName="email">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Укажите веб сайт пользователя:</mat-label>
+            <mat-label>Website:</mat-label>
             <input matInput formControlName="website">
         </mat-form-field>
 
         <div formGroupName="company">
             <mat-form-field class="forms-size">
-                <mat-label>Укажите имя компании:</mat-label>
+                <mat-label>Company name:</mat-label>
                 <input matInput formControlName="name">
             </mat-form-field>
         </div>
-        <button type="submit" class="User-form-button" [disabled]="!form.valid" (click)="submitForm()" mat-button>Create user</button>
+
+        <mat-form-field class="forms-size">
+            <mat-label>Phone number:</mat-label>
+            <input matInput formControlName="phone">
+        </mat-form-field>
+        <button type="submit" class="User-form-button" [disabled]="form.invalid" (click)="submitForm()" mat-button>Create user</button>
     </form>
 </div>

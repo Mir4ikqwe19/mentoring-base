@@ -1,7 +1,8 @@
 <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 <div class="user-component-container">
-    <button type="button" mat-button (click)="openCreateDialog()" class="create-user-button"> Add user
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+    <button type="button" mat-button (click)="openCreateDialog()" class="create-user-button">
+        <span class="add-user">Add user</span>
+        <mat-icon style="color: #F0BA4E;">add</mat-icon>
     </button>
     <div class="users-carts-container">
         <div *ngFor="let user of usersService.users$ | async">
