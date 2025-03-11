@@ -6,7 +6,7 @@ import { pipe } from "rxjs";
     standalone: true
 })
 export class CustomNumberPipe implements PipeTransform {
-    transform(phone: string | undefined): string {
+    transform(phone: string ): string {
         if (!phone) return '';
         return phone.replace(/[-()x\s.]/g, '');
     }

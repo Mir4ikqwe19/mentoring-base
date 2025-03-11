@@ -18,7 +18,7 @@
         </mat-card-title>
         <mat-card-title class="users-carts-name">
             <mat-icon>phonelink_ring</mat-icon>
-            {{ user.phone | CustomNumberPipe }}
+            {{ user.phone ?? '' | CustomNumberPipe }}
         </mat-card-title>
     </mat-card-header>
     <mat-card-actions class="button-container">
