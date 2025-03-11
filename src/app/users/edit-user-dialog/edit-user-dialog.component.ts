@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -20,10 +20,10 @@ export class EditUserDialogComponent {
 
   public form = new FormGroup({
     id: new FormControl<number>(new Date().getTime(), {nonNullable: true}),
-    name: new FormControl<string>(this.data.user.name, {validators: [Validators.required, Validators.minLength(2)], nonNullable: true} ),
-    website: new FormControl<string>(this.data.user.website, {validators: [Validators.required,], nonNullable: true}),
-    email: new FormControl<string>(this.data.user.email, {validators: [Validators.required, Validators.email], nonNullable: true}),
-    phone: new FormControl<string | undefined>(this.data.user.phone?.replace(/[-()x\s.]/g, ''), { nonNullable: true},),
+    name: new FormControl<string>(this.data.user.name ?? '', {validators: [Validators.required, Validators.minLength(2)], nonNullable: true} ),
+    website: new FormControl<string>(this.data.user.website ?? '', {validators: [Validators.required,], nonNullable: true}),
+    email: new FormControl<string>(this.data.user.email ?? '', {validators: [Validators.required, Validators.email], nonNullable: true}),
+    phone: new FormControl<string>(this.data.user.phone ?? ''.replace(/[-()x\s.]/g, ''), {validators: [Validators.required], nonNullable: true},),
     company: new FormGroup({
       name: new FormControl<string>(this.data.user.company.name, {validators: Validators.required, nonNullable: true}),
     }),

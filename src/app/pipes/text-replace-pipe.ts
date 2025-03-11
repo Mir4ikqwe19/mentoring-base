@@ -7,6 +7,6 @@ import { IUser } from "../users/users-interface/users-interface";
 })
 export class CustomPipe implements PipeTransform{
     transform(text: string): string {
-    return `${text.substring(0, 19)}...`;
+    return `${text.substring(0, 17)}...`;
     }
 }
