@@ -1,11 +1,12 @@
 import { DatePipe, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { YellowDirective } from '../directives/yellow.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,NgFor, DatePipe],
+  imports: [RouterOutlet,RouterLink,NgFor, DatePipe, YellowDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

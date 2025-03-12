@@ -6,12 +6,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { IUser } from '../users-interface/users-interface';
-import { SlicePipe } from '@angular/common';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
   standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule,MatFormFieldModule, MatInputModule, FormsModule, MatDialogClose],
+  imports: [ReactiveFormsModule, MatButtonModule,MatFormFieldModule, MatInputModule, FormsModule, MatDialogClose, MatTooltipModule],
   templateUrl: './edit-user-dialog.component.html',
   styleUrl: './edit-user-dialog.component.scss'
 })

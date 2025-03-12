@@ -1,20 +1,20 @@
-<mat-card appearance="outlined" class="users-carts ">
+<mat-card appearance="outlined" class="users-carts" shadowDirect>
     <mat-card-header class="mat-card-header">
         <mat-card-title class="users-carts-name">
             <mat-icon style="color:#F0BA4E;">assignment_ind</mat-icon>
-            {{user.name}}
+            {{ user.name }}
         </mat-card-title>
         <mat-card-title class="users-carts-name">
             <mat-icon style="color: #005cbb;"> contact_mail</mat-icon>
-            {{user.email | CustomPipe }}
+            {{ user.email | CustomPipe }}
         </mat-card-title>
         <mat-card-title class="users-carts-name">
             <mat-icon style="color: #4B565E;">chrome_reader_mode</mat-icon>
-            {{user.website}}
+            {{ user.website }}
         </mat-card-title>
         <mat-card-title class="users-carts-name">
             <mat-icon style="color: #7c66996c;"> business</mat-icon>
-            {{user.company.name}}
+            {{ user.company.name }}
         </mat-card-title>
         <mat-card-title class="users-carts-name">
             <mat-icon>phonelink_ring</mat-icon>

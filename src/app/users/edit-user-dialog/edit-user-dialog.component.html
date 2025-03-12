@@ -32,9 +32,10 @@
     <button 
         class="edit-user-form-button" 
         [disabled]="form.invalid" 
-        mat-button 
+        mat-raised-button
         [mat-dialog-close]="userWithUpdatedFields"
         type="button"
+        matTooltip="Редактировать данные пользователя"
     >
         Edit user
     </button>

@@ -20,6 +20,7 @@ import { CustomPipe } from "../../pipes/text-replace-pipe";
 import { NgFor, SlicePipe } from "@angular/common";
 import { CustomNumberPipe } from "../../pipes/number-replace-pipe";
 import { pipe } from "rxjs";
+import { ShadowDirective } from "../../directives/shadow.directive";
 
 @Component({
     selector: 'app-user-card',
@@ -33,7 +34,8 @@ import { pipe } from "rxjs";
       MatDialogModule,
       MatIcon,
       CustomPipe,
-      CustomNumberPipe
+      CustomNumberPipe,
+      ShadowDirective
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
